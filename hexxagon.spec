@@ -9,7 +9,6 @@ Source12:	%{name}-32.png
 Source13:	%{name}-16.png
 Group:		Games/Boards
 License:	GPL
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	gtk+1.2-devel
 BuildRequires:  gtkmm2.4-devel
 

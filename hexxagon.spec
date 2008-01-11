@@ -33,10 +33,25 @@ rm -rf $RPM_BUILD_ROOT
 #install -m755 src/%{name}-gtk/%{name} -D $RPM_BUILD_ROOT%{_gamesbindir}/%{name}
 #install -m755 src/%{name}-text/%{name}_text -D $RPM_BUILD_ROOT%{_gamesbindir}/%{name}-text
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} << EOF
-?package(%{name}): command="%{_gamesbindir}/%{name}" icon="%{name}.png" section="Amusement/Boards" title="Hexxagon (GTK)" longtitle="Othello clone" needs="x11"
-?package(%{name}): command="%{_gamesbindir}/%{name}" icon="%{name}.png" section="Amusement/Boards" title="Hexxagon (text)" longtitle="Othello clone" needs="text"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_gamesbindir}/%{name}
+Icon=%{name}.png
+Categories=BoardGame;
+Name=Hexxagon (GTK)
+Comment=Othello clone
+EOF
+
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}-text.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_gamesbindir}/%{name}
+Icon=%{name}.png
+Categories=BoardGame;
+Name=Hexxagon (text)
+Comment=Othello clone
 EOF
 
 install -m644 %{SOURCE11} -D $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
@@ -56,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc README
 %{_gamesbindir}/%{name}
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}*.desktop
 %{_liconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png

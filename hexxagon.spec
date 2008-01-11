@@ -38,7 +38,7 @@ cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Type=Application
 Exec=%{_gamesbindir}/%{name}
-Icon=%{name}.png
+Icon=%{name}
 Categories=BoardGame;
 Name=Hexxagon (GTK)
 Comment=Othello clone
@@ -48,7 +48,7 @@ cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}-text.desktop
 [Desktop Entry]
 Type=Application
 Exec=%{_gamesbindir}/%{name}
-Icon=%{name}.png
+Icon=%{name}
 Categories=BoardGame;
 Name=Hexxagon (text)
 Comment=Othello clone

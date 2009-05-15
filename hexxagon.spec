@@ -7,8 +7,9 @@ Source0:	http://nesqi.homeip.net/hexxagon/download/%{name}-%{version}.tar.bz2
 Source11:	%{name}-48.png
 Source12:	%{name}-32.png
 Source13:	%{name}-16.png
+Patch0:		hexxagon-1.0-fix-build.patch
 Group:		Games/Boards
-License:	GPL
+License:	GPLv2+
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	gtk+1.2-devel
 BuildRequires:  gtkmm2.4-devel
@@ -20,9 +21,10 @@ This is the GTK1 version of Hexxagon.
 
 %prep
 %setup -q
-%configure 
+%patch0 -p1 -b .fix-build
 
 %build
+%configure 
 %make
 
 %install
@@ -39,18 +41,8 @@ cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 Type=Application
 Exec=%{_gamesbindir}/%{name}
 Icon=%{name}
-Categories=BoardGame;
-Name=Hexxagon (GTK)
-Comment=Othello clone
-EOF
-
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}-text.desktop
-[Desktop Entry]
-Type=Application
-Exec=%{_gamesbindir}/%{name}
-Icon=%{name}
-Categories=BoardGame;
-Name=Hexxagon (text)
+Categories=Game;BoardGame;
+Name=Hexxagon
 Comment=Othello clone
 EOF
 

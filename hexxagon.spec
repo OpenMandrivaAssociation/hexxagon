@@ -1,7 +1,7 @@
 Name:		hexxagon
 Summary:	Othello clone (GTK version)
 Version:	1.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 Url:		http://nesqi.homeip.net/hexxagon/
 Source0:	http://nesqi.homeip.net/hexxagon/download/%{name}-%{version}.tar.bz2
 Source11:	%{name}-48.png

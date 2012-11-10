@@ -1,0 +1,12 @@
+Index: hexxagon-1.0/src/libhexx/bitboard64.cpp
+===================================================================
+--- hexxagon-1.0/src/libhexx/bitboard64.cpp
++++ hexxagon-1.0/src/libhexx/bitboard64.cpp	2009-05-15 09:46:12.000000000 +0200
+@@ -24,6 +24,7 @@
+ #include <stdio.h>
+ #include <iostream>
+ #include <netinet/in.h>
++#include "libhexx.h"
+ 
+ using namespace libhexx;
+ 

@@ -1,7 +1,7 @@
 Name:		hexxagon
 Summary:	Othello clone (GTK version)
 Version:	1.0.2
-Release:	1
+Release:	2
 Group:		Games/Boards
 License:	GPLv2+
 Url:		http://nesqi.se/hexxagon/

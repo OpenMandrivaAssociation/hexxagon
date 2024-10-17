@@ -4,7 +4,7 @@ Version:	1.0.2
 Release:	2
 Group:		Games/Boards
 License:	GPLv2+
-Url:		http://nesqi.se/hexxagon/
+Url:		https://nesqi.se/hexxagon/
 Source0:	http://nesqi.se/download/%{name}-%{version}.tar.bz2
 Source11:	%{name}-48.png
 Source12:	%{name}-32.png

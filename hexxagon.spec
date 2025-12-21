@@ -10,6 +10,11 @@ Source11:	%{name}-48.png
 Source12:	%{name}-32.png
 Source13:	%{name}-16.png
 Patch0:		hexxagon-1.0-fix-build.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gtk+)
 BuildRequires:	pkgconfig(gtkmm-2.4)
 
